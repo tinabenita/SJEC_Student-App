@@ -11,6 +11,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -73,7 +74,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.navigation_website:
-                Toast.makeText(this, "Website",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Website",Toast.LENGTH_SHORT).show();
+                Intent it = new Intent(Intent.ACTION_VIEW);
+                it.setData(Uri.parse("https://www.sjec.ac.in/"));
+                startActivity(it);
                 break;
 
         }
