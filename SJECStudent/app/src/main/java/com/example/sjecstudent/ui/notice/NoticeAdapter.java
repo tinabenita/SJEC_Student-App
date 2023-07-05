@@ -3,6 +3,7 @@ package com.example.sjecstudent.ui.notice;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.bumptech.glide.Glide;
+import com.example.sjecstudent.FullImageView;
 import com.example.sjecstudent.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -54,6 +56,14 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeView
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        holder.stuappNoticeImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, FullImageView.class);
+                intent.putExtra("image",currentItem.getImage());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
