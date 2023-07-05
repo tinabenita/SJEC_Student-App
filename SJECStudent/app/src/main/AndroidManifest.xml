@@ -14,12 +14,16 @@
         android:theme="@style/Theme.SJECStudent"
         tools:targetApi="31">
         <activity
+            android:name=".Developers"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".FullImageView"
             android:exported="false" />
         <activity
             android:name=".ebook.EbookActivity"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
